@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php
+    session_start();
         require_once __DIR__ . "/libs/helper.php";
 
     ?>
@@ -18,7 +19,17 @@
             <input type="reset" value="Annulla">
         </form>
 
-        <?php echo randomPassword($pswL) ?>
+
+        
+        <?php 
+        if ($pswL > 0 ) {
+
+            $_SESSION['pswL'] = $pswL;
+            header('Location: ./thankyou.php');
+        }
+
+        ?>
+        
        
 </body>
 </html>
