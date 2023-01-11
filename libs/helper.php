@@ -1,9 +1,14 @@
 <?php
 
-        $pswL = $_GET['pswL'];
-        function randomPassword($pswL) {
+        $pswL = $_GET['pswL'] ?? false;
+        $filterNumber = $_GET["number"] ?? false;
+        function randomPassword($pswL,$filterNumber) {
+            $alphabet = 'abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
+            if ($filterNumber) {
+            $alphabet .= '0123456789';
             
-            $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+            }
+            
             $pass = array(); 
             $alphaLength = strlen($alphabet) - 1; 
             for ($i = 0; $i < $pswL; $i++) {
