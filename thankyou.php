@@ -10,12 +10,14 @@
 
         require_once __DIR__ . "/libs/helper.php";
         $pswL = $_SESSION['pswL'];
+        $filterNumber = $_SESSION['number'];
+
 
     ?>
 </head>
 <body>
     <?php
-      echo randomPassword($pswL); 
+      echo randomPassword($pswL, $filterNumber); 
     ?>
 
 
