@@ -2,11 +2,16 @@
 
         $pswL = $_GET['pswL'] ?? false;
         $filterNumber = $_GET["number"] ?? false;
-        function randomPassword($pswL,$filterNumber) {
-            $alphabet = 'abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
+        $filterLettere = $_GET["lettere"] ?? false;
+        function randomPassword($pswL,$filterNumber, $filterLettere) {
+            $alphabet = '';
             if ($filterNumber) {
             $alphabet .= '0123456789';
             
+            } 
+            if ($filterLettere){
+                $alphabet .= 'abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
+                
             }
             
             $pass = array(); 
