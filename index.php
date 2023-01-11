@@ -15,6 +15,15 @@
         <form>
             <label for="pswL">Lunghezza della password</label>
             <input type="number" name="pswL">
+            <label for="number">Numeri</label>
+            <input type="checkbox" name="number" 
+            <?php
+                if ($filterNumber) {
+
+                    echo "checked";
+                }
+            ?>
+        >
             <input type="submit" value="Invia">
             <input type="reset" value="Annulla">
         </form>
@@ -25,6 +34,7 @@
         if ($pswL > 0 ) {
 
             $_SESSION['pswL'] = $pswL;
+            $_SESSION['number'] = $filterNumber;
             header('Location: ./thankyou.php');
         }
 
