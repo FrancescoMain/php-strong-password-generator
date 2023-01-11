@@ -12,13 +12,14 @@
         $pswL = $_SESSION['pswL'];
         $filterNumber = $_SESSION['number'];
         $filterLettere = $_SESSION['lettere'];
+        $filterSymbol = $_SESSION['symbol'];
 
 
     ?>
 </head>
 <body>
     <?php
-      echo randomPassword($pswL, $filterNumber, $filterLettere ); 
+      echo randomPassword($pswL, $filterNumber, $filterLettere,  $filterSymbol ); 
     ?>
 
 
