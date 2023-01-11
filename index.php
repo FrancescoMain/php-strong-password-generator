@@ -23,7 +23,16 @@
                     echo "checked";
                 }
             ?>
-        >
+            >
+            <label for="lettere">Lettere</label>
+            <input type="checkbox" name="lettere" 
+            <?php
+                if ($filterLettere) {
+
+                    echo "checked";
+                }
+            ?>
+            >
             <input type="submit" value="Invia">
             <input type="reset" value="Annulla">
         </form>
@@ -35,6 +44,7 @@
 
             $_SESSION['pswL'] = $pswL;
             $_SESSION['number'] = $filterNumber;
+            $_SESSION['lettere'] = $filterLettere;
             header('Location: ./thankyou.php');
         }
 
