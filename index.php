@@ -15,6 +15,15 @@
         <form>
             <label for="pswL">Lunghezza della password</label>
             <input type="number" name="pswL">
+            <label for="symbol">Simboli</label>
+            <input type="checkbox" name="symbol" 
+            <?php
+                if ($filterSymbol) {
+
+                    echo "checked";
+                }
+            ?>
+            >
             <label for="number">Numeri</label>
             <input type="checkbox" name="number" 
             <?php
@@ -45,6 +54,7 @@
             $_SESSION['pswL'] = $pswL;
             $_SESSION['number'] = $filterNumber;
             $_SESSION['lettere'] = $filterLettere;
+            $_SESSION['symbol'] = $filterSymbol;
             header('Location: ./thankyou.php');
         }
 
