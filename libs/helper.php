@@ -3,7 +3,8 @@
         $pswL = $_GET['pswL'] ?? false;
         $filterNumber = $_GET["number"] ?? false;
         $filterLettere = $_GET["lettere"] ?? false;
-        function randomPassword($pswL,$filterNumber, $filterLettere) {
+        $filterSymbol = $_GET["symbol"] ?? false;
+        function randomPassword($pswL,$filterNumber, $filterLettere,$filterSymbol) {
             $alphabet = '';
             if ($filterNumber) {
             $alphabet .= '0123456789';
@@ -11,6 +12,10 @@
             } 
             if ($filterLettere){
                 $alphabet .= 'abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ';
+                
+            }
+            if ($filterSymbol){
+                $alphabet .= '.,;:-_!"$%&/()[]';
                 
             }
             
